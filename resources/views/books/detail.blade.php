@@ -19,9 +19,10 @@
 
 @include('reviews.create')
 
-@if ($book->reviews->count() > 0)
-@foreach ($book->reviews->pluck('text') as $review)
-<p>{{ $review }}</p>
+@if ($reviews->count() > 0)
+@foreach ($reviews as $review)
+<p>{{$review->text}}</p>
+<p>by {{ $review->user->name }}</p>
 @endforeach
 
 @else

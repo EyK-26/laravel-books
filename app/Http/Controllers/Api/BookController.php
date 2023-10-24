@@ -19,4 +19,13 @@ class BookController extends Controller
             return 'user not logged in';
         }
     }
+
+    public function search(Request $request)
+    {
+        // $query = Book::where('title', 'like', '%' . $request->title . '%');
+        $searchParam = $request->query('search');
+        $result = Book::where('title', 'like', '%' . $searchParam . '%')->limit(10)->get();
+        // return response()->json($result);
+        return $result;
+    }
 }

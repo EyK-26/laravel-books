@@ -25,3 +25,5 @@ Route::get('/test/array', [TestController::class, 'arrayResponse'])->name('test.
 Route::get('/test/model', [TestController::class, 'modelResponse'])->name('test.model');
 
 Route::get('/books/latest', [BookController::class, 'latest'])->name('books.latest');
+
+Route::get('/books/search', [BookController::class, 'search'])->name('books.search');

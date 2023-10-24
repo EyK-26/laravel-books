@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class ReviewController extends Controller
 {
+
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -19,4 +20,8 @@ class ReviewController extends Controller
         $review->save();
         return redirect()->route('books.show', $book_id)->with("success", "review submitted");
     }
+
+    // public function getUser($id) {
+
+    // }
 }
