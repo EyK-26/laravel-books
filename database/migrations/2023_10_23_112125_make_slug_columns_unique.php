@@ -14,15 +14,15 @@ return new class extends Migration
         // Schema::table('books', function (Blueprint $table) {
         //     $table->unique('slug');
         // });
-        Schema::table('publishers', function (Blueprint $table) {
-            $table->unique('slug');
-        });
-        Schema::table('categories', function (Blueprint $table) {
-            $table->unique('slug');
-        });
-        Schema::table('authors', function (Blueprint $table) {
-            $table->unique('slug');
-        });
+        // Schema::table('publishers', function (Blueprint $table) {
+        //     $table->unique('slug');
+        // });
+        // Schema::table('categories', function (Blueprint $table) {
+        //     $table->unique('slug');
+        // });
+        // Schema::table('authors', function (Blueprint $table) {
+        //     $table->unique('slug');
+        // });
     }
 
     /**
@@ -33,14 +33,14 @@ return new class extends Migration
         // Schema::table('books', function (Blueprint $table) {
         //     $table->unique('slug');
         // });
-        Schema::table('publishers', function (Blueprint $table) {
-            $table->unique('slug');
-        });
-        Schema::table('categories', function (Blueprint $table) {
-            $table->unique('slug');
-        });
-        Schema::table('authors', function (Blueprint $table) {
-            $table->unique('slug');
-        });
+        // Schema::table('publishers', function (Blueprint $table) {
+        //     $table->unique('slug');
+        // });
+        // Schema::table('categories', function (Blueprint $table) {
+        //     $table->unique('slug');
+        // });
+        // Schema::table('authors', function (Blueprint $table) {
+        //     $table->unique('slug');
+        // });
     }
 };

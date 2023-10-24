@@ -1,3 +1,37 @@
 body {
-    background-color: rgba(160, 135, 135, 0.616);
+    font-weight: 500;
+    background-color: antiquewhite;
+    text-align: center;
+}
+
+svg {
+    width: 1.5%;
+}
+
+img {
+    width: 10%;
+    margin: 2em;
+}
+
+.container {
+    padding: 10px;
+    display: flex;
+}
+
+.container * {
+    margin: 5px;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.rotate {
+    animation: rotation 4s infinite linear;
 }

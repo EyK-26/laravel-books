@@ -33,6 +33,12 @@ class BookController extends Controller
         return redirect()->route('books.index')->with('success', 'book added');
     }
 
+    public function show($id)
+    {
+        $book = Book::findOrFail($id);
+        return view('books.detail', compact('book'));
+    }
+
     public function edit(string $id)
     {
         $book = Book::findOrFail($id);
