@@ -13,13 +13,13 @@ class BookController extends Controller
     {
         $books = Book::query()->limit(50)->paginate(10);
 
-        return view('books.index', compact('books'));
+        return view('admin.books.index', compact('books'));
     }
 
     public function create()
     {
         $book = new Book();
-        return view('books.create', compact('book'));
+        return view('admin.books.create', compact('book'));
     }
 
     public function store(Request $request)
@@ -44,7 +44,7 @@ class BookController extends Controller
     public function edit(string $id)
     {
         $book = Book::findOrFail($id);
-        return view('books.create', compact('book'));
+        return view('admin.books.create', compact('book'));
     }
 
     public function update(Request $request, string $id)
@@ -57,5 +57,10 @@ class BookController extends Controller
         $book->slug = $slug;
         $book->save();
         return redirect()->route('books.show', $id)->with('success', 'book updated');
+    }
+
+    public function search()
+    {
+        return view('common.search');
     }
 }

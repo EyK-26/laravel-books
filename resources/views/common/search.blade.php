@@ -5,12 +5,11 @@
 
 <h4>Search</h4>
 
-<form action="{{ route('books.search') }}" method="get">
-    <input type="text" name="search" id="search">
-    <input type="submit" value="submit">
-</form>
+<input id="search" type="text" name="search">
 
-<div id="results">
+<div id="search-results">
 
 </div>
+
+@vite("resources/js/search-book.js")
 @endsection

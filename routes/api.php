@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\BookController;
 use App\Http\Controllers\Api\TestController;
+use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,4 +27,6 @@ Route::get('/test/model', [TestController::class, 'modelResponse'])->name('test.
 
 Route::get('/books/latest', [BookController::class, 'latest'])->name('books.latest');
 
-Route::get('/books/search', [BookController::class, 'search'])->name('books.search');
+Route::get('/books/search', [BookController::class, 'search'])->name('search');
+
+Route::get('/users', [UserController::class, 'index'])->name('api.users');

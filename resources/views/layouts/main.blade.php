@@ -16,14 +16,8 @@
         <button>Logout</button>
     </form>
     @endauth
-
-
-
     @yield('content')
 
-    <div id="partners"></div>
-    @viteReactRefresh
-    @vite('resources/js/partners.jsx')
 </body>
 
 </html>

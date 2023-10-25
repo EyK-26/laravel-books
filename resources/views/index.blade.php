@@ -11,7 +11,7 @@
 <h1>Some Title</h1>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit consequuntur eveniet.</p>
 
-@include('common.search')
+{{-- @include('common.search') --}}
 
 {{-- @foreach ($crime_books as $book)
 <div class="book">
@@ -23,7 +23,10 @@
 
 </div>
 
-@vite('resources/js/latest-books.js')
+<div id="partners"></div>
+@viteReactRefresh
+@vite('resources/js/partners.jsx')
 
+@vite('resources/js/latest-books.js')
 
 @endsection
