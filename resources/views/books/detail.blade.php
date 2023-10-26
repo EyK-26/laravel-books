@@ -23,6 +23,19 @@
 @foreach ($reviews as $review)
 <p>{{$review->text}}</p>
 <p>by {{ $review->user->name }}</p>
+
+@can('admin')
+<form action="{{ route('reviews.destroy', $review->id) }}" method="post">
+    @csrf
+    @method('DELETE')
+    <button type="submit">delete review</button>
+</form>
+@endcan
+
+@cannot('admin')
+<p>please contact your admin to delete your review</p>
+@endcannot
+
 @endforeach
 
 @else

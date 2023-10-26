@@ -3,7 +3,6 @@
 ])
 
 @section('content')
-@include('common.search')
 
 @if (count($books) > 0)
 @foreach ($books as $book)
@@ -14,4 +13,5 @@
 {{ $books->links() }}
 
 @endif
+@include('common.search')
 @endsection

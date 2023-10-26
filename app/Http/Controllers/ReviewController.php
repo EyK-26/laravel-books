@@ -21,7 +21,10 @@ class ReviewController extends Controller
         return redirect()->route('books.show', $book_id)->with("success", "review submitted");
     }
 
-    // public function getUser($id) {
-
-    // }
+    public function destroy($id)
+    {
+        $review = Review::findOrFail($id);
+        $review->delete();
+        return redirect()->route('books.show', $id)->with("success", "review deleted");
+    }
 }

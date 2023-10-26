@@ -22,12 +22,17 @@ class AuthServiceProvider extends ServiceProvider
     public function boot(): void
     {                                   // always takes the current $user as argument
         Gate::define("admin", function ($user) {
-            // if ($user->hasRole("admin"))
-            if (str_ends_with($user->email, "@admin.com")) {
+            if ($user->role === "admin") {
                 return true;
             } else {
                 return false;
             }
+
+            // if (str_ends_with($user->email, "@admin.com")) {
+            //     return true;
+            // } else {
+            //     return false;
+            // }
         });
     }
 }
