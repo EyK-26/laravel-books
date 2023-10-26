@@ -17,6 +17,22 @@
 <p>{{ $book->edition }}</p>
 <img src="{{ $book->image }}" alt="{{ $book->title }}">
 
+
+@if ($book->bookshops->count() > 0)
+
+<p>You can find them at</p>
+@foreach ($book->bookshops as $shop)
+<a href="{{ route('bookshops.show', $shop->id) }}">{{ $shop->name }} located at {{ $shop->city }}</a>
+<br>
+@endforeach
+
+@else
+<p>Not in store yet</p>
+@endif
+
+
+
+
 @include('reviews.create')
 
 @if ($reviews->count() > 0)

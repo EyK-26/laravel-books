@@ -1,6 +1,6 @@
 <h4>Search</h4>
 
-<input id="search" type="text" name="search">
+<input id="search" type="text">
 
 <div id="search-results">
 

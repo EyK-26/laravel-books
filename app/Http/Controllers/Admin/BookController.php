@@ -11,7 +11,7 @@ class BookController extends Controller
 {
     public function index()
     {
-        $books = Book::query()->limit(50)->paginate(3);
+        $books = Book::limit(10)->paginate(3);
 
         return view('admin.books.index', compact('books'));
     }
@@ -34,6 +34,14 @@ class BookController extends Controller
         return redirect()->route('books.show', $book->id)->with('success', 'book added');
     }
 
+    // public function show($id)
+    // {
+    //     $book = Book::with('bookshops')
+    //         ->where('id', $id)
+    //         ->first();
+    //     $reviews = Review::query()->where("book_id", $id)->get();
+    //     return view('books.detail', compact('book', 'reviews'));
+    // }
     public function show($id)
     {
         $book = Book::findOrFail($id);
@@ -57,10 +65,5 @@ class BookController extends Controller
         $book->slug = $slug;
         $book->save();
         return redirect()->route('books.show', $id)->with('success', 'book updated');
-    }
-
-    public function search()
-    {
-        return view('common.search');
     }
 }

@@ -3,8 +3,7 @@
         <a href="{{ route('index') }}">{{ $currentPage === 'index' ? "HOME" : "home" }}</a>
         <a href="{{ route('books.index') }}">books</a>
         @auth
-        <a href="{{ route('books.latest') }}">Books Latest</a>
-        @else
+        <a href="{{ route('authors.index') }}">authors for logged in users</a> @else
         <a href="/register">Register</a>
         <a href="/login">login</a>
         @endauth
@@ -17,8 +16,7 @@
             books" }}</a>
         @endcan
 
-        <a href="{{ route('authors.index') }}">authors</a>
-        <a href="{{ route('book.search') }}">search books</a>
+
         <a href="{{ route('about') }}">{{ $currentPage === 'about-us' ? "ABOUT" : "about" }}</a>
     </nav>
 </header>

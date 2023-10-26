@@ -24,7 +24,7 @@ class BookController extends Controller
     {
         // $query = Book::where('title', 'like', '%' . $request->title . '%');
         $searchParam = $request->query('search');
-        $result = Book::where('title', 'like', '%' . $searchParam . '%')->with('authors')->limit(10)->get();
+        $result = Book::where('title', 'like', '%' . $searchParam . '%')->with('authors')->limit(5)->get();
         // return response()->json($result);
         return $result;
     }
